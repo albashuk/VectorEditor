@@ -13,6 +13,7 @@
 		FA8527942695EBA10093FE6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8527922695EBA10093FE6C /* Main.storyboard */; };
 		FA8527962695EBA40093FE6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8527952695EBA40093FE6C /* Assets.xcassets */; };
 		FA8527992695EBA40093FE6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8527972695EBA40093FE6C /* LaunchScreen.storyboard */; };
+		FA8527A12695EEB60093FE6C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8527A02695EEB60093FE6C /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FA8527952695EBA40093FE6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8527982695EBA40093FE6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA85279A2695EBA40093FE6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA8527A02695EEB60093FE6C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				FA8527952695EBA40093FE6C /* Assets.xcassets */,
 				FA8527972695EBA40093FE6C /* LaunchScreen.storyboard */,
 				FA85279A2695EBA40093FE6C /* Info.plist */,
+				FA8527A02695EEB60093FE6C /* CustomTableViewCell.swift */,
 			);
 			path = VectorEditor;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				FA8527912695EBA10093FE6C /* ViewController.swift in Sources */,
 				FA85278D2695EBA10093FE6C /* AppDelegate.swift in Sources */,
+				FA8527A12695EEB60093FE6C /* CustomTableViewCell.swift in Sources */,
 				FA85278F2695EBA10093FE6C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +299,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Oleksii-Bashuk.VectorEditor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -313,7 +317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Oleksii-Bashuk.VectorEditor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
