@@ -15,6 +15,7 @@
 		FA8527992695EBA40093FE6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8527972695EBA40093FE6C /* LaunchScreen.storyboard */; };
 		FA8527A12695EEB60093FE6C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8527A02695EEB60093FE6C /* CustomTableViewCell.swift */; };
 		FA8527E5269846D30093FE6C /* UIDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8527E4269846D30093FE6C /* UIDrawingView.swift */; };
+		FA8527E7269867E60093FE6C /* VectorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8527E6269867E60093FE6C /* VectorObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FA85279A2695EBA40093FE6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8527A02695EEB60093FE6C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		FA8527E4269846D30093FE6C /* UIDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDrawingView.swift; sourceTree = "<group>"; };
+		FA8527E6269867E60093FE6C /* VectorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				FA85279A2695EBA40093FE6C /* Info.plist */,
 				FA8527A02695EEB60093FE6C /* CustomTableViewCell.swift */,
 				FA8527E4269846D30093FE6C /* UIDrawingView.swift */,
+				FA8527E6269867E60093FE6C /* VectorObject.swift */,
 			);
 			path = VectorEditor;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				FA8527A12695EEB60093FE6C /* CustomTableViewCell.swift in Sources */,
 				FA85278F2695EBA10093FE6C /* SceneDelegate.swift in Sources */,
 				FA8527E5269846D30093FE6C /* UIDrawingView.swift in Sources */,
+				FA8527E7269867E60093FE6C /* VectorObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
