@@ -22,6 +22,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="450" id="skJ-UG-nxM"/>
                                 </constraints>
+                                <color key="sectionIndexBackgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="100" id="uiI-Gq-GtD" customClass="CustomTableViewCell" customModule="VectorEditor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="450" height="100"/>
@@ -63,22 +64,41 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-9g-ia1">
+                                <rect key="frame" x="450" y="0.0" width="916" height="125"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="XSL-Yq-yaj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hh8-Qi-58I" customClass="UIDrawingView" customModule="VectorEditor" customModuleProvider="target">
+                                <rect key="frame" x="450" y="125" width="916" height="899"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ebQ-9g-ia1" firstAttribute="leading" secondItem="rXD-CY-jtT" secondAttribute="trailing" id="4Cc-CL-u9k"/>
                             <constraint firstItem="rXD-CY-jtT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5iB-G1-2Ag"/>
                             <constraint firstAttribute="bottom" secondItem="rXD-CY-jtT" secondAttribute="bottom" id="IQB-Ob-8Rd"/>
+                            <constraint firstAttribute="bottom" secondItem="Hh8-Qi-58I" secondAttribute="bottom" id="N2d-FM-PFV"/>
                             <constraint firstItem="rXD-CY-jtT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T8f-mG-ATA"/>
+                            <constraint firstItem="Hh8-Qi-58I" firstAttribute="top" secondItem="ebQ-9g-ia1" secondAttribute="bottom" id="TcS-ga-Vi1"/>
+                            <constraint firstItem="Hh8-Qi-58I" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bjF-bt-mkk"/>
+                            <constraint firstItem="ebQ-9g-ia1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lgR-oH-OKJ"/>
+                            <constraint firstItem="Hh8-Qi-58I" firstAttribute="leading" secondItem="rXD-CY-jtT" secondAttribute="trailing" id="rQi-0R-rKT"/>
+                            <constraint firstItem="ebQ-9g-ia1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xU9-SL-lsu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="drawingView" destination="Hh8-Qi-58I" id="GHQ-Aa-RO4"/>
                         <outlet property="tableView" destination="rXD-CY-jtT" id="Klc-z2-KWf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11.594202898550726" y="88.392857142857139"/>
+            <point key="canvasLocation" x="11.420204978038067" y="87.890625"/>
         </scene>
     </scenes>
     <resources>
