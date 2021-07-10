@@ -7,15 +7,15 @@
 
 import UIKit
 
-enum FigureTypes {
-    case Basic
+enum FigureTypes: Int, CaseIterable {
     case Rectangle
     case Circle
+    case None
 }
 
 class VectorFigure {
     let date = Date()
-    var type = FigureTypes.Basic
+    var type = FigureTypes.None
     
     var frame: CGRect
     var color: UIColor
@@ -31,7 +31,7 @@ class VectorFigure {
     }
     
     func getPath() -> UIBezierPath {
-        fatalError ("There is no path for basic vector object class")
+        fatalError ("There is no path for basic vector figure class")
     }
 }
 
