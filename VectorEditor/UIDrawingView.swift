@@ -8,7 +8,6 @@
 import UIKit
 
 class UIDrawingView: UIView {
-    
     var elements = [VectorFigure]()
 
     override func draw(_ rect: CGRect) {
@@ -20,5 +19,4 @@ class UIDrawingView: UIView {
             path.fill()
         }
     }
-
 }

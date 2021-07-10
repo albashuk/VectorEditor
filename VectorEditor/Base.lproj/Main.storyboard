@@ -95,6 +95,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hh8-Qi-58I" customClass="UIDrawingView" customModule="VectorEditor" customModuleProvider="target">
                                 <rect key="frame" x="450" y="125" width="916" height="899"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="F4w-x8-jeO" appends="YES" id="35E-3c-D4v"/>
+                                    <outletCollection property="gestureRecognizers" destination="QHm-Xx-HId" appends="YES" id="L73-5r-fOz"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -118,6 +123,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="F4w-x8-jeO">
+                    <connections>
+                        <action selector="tapGestureRecognizer:" destination="BYZ-38-t0r" id="4S8-gZ-Gp2"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="QHm-Xx-HId">
+                    <connections>
+                        <action selector="panGestureRecognizer:" destination="BYZ-38-t0r" id="thw-XR-ZiK"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="11.420204978038067" y="87.890625"/>
         </scene>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource  {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let elements = ["cat", "dog", "frog"]
     
@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource  {
     @IBOutlet weak var drawingView: UIDrawingView!
     
     override func viewDidLoad() {
+        tableView.delegate = self
         tableView.dataSource = self
         
         drawingView.elements.append(Rectangle(frame: CGRect(x: 10, y: 10, width: 100, height: 100), color: UIColor.red))
@@ -43,12 +44,6 @@ class ViewController: UIViewController, UITableViewDataSource  {
         let dateResult = formatter.string(from: date)
         cell.cellDate.text = dateResult
         
-//        let calendar = Calendar.current
-//        let hour = calendar.component(.hour, from: date)
-//        let minutes = calendar.component(.minute, from: date)
-//        let seconds = calendar.component(.second, from: date)
-//        cell.cellTime.text = "\(hour):\(minutes):\(seconds)"
-        
         formatter.dateFormat = "HH:mm:ss"
         let timeResult = formatter.string(from: date)
         cell.cellTime.text = timeResult
@@ -68,11 +63,67 @@ class ViewController: UIViewController, UITableViewDataSource  {
             figureType = "Circle"
             figureView = Circle(frame: CGRect(x: 0, y: 0, width: cellViewFigurewidth, height: cellViewFigureHeight), color: element.color)
         }
+//        print("Figure saved: \(indexPath.row), \(element.type), \(element.color)")
+//        print("Figure added: \(figureView.type), \(figureView.color)")
         cell.cellFigureType.text = figureType
-        
         cell.cellFigureView.element = figureView
+        cell.cellFigureView.setNeedsDisplay()
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            drawingView.elements.remove(at: indexPath.row)
+            drawingView.setNeedsDisplay()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    @IBAction func tapGestureRecognizer(_ sender: UITapGestureRecognizer) {
+        let tapLocation = sender.location(in: drawingView)
+        let circleRadius = CGFloat(30)
+        drawingView.elements.append(Circle(frame: CGRect(x: tapLocation.x - circleRadius,
+                                                         y: tapLocation.y - circleRadius,
+                                                         width: 2 * circleRadius,
+                                                         height: 2 * circleRadius),
+                                           color: UIColor.orange))
+        
+        drawingView.setNeedsDisplay()
+        tableView.reloadData()
+    }
+    
+    var panGestureStartPoint = CGPoint()
+    @IBAction func panGestureRecognizer(_ sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            panGestureStartPoint = sender.location(in: drawingView)
+            drawingView.elements.append(Rectangle(frame: CGRect(x: panGestureStartPoint.x,
+                                                                y: panGestureStartPoint.y,
+                                                                width: 0,
+                                                                height: 0),
+                                                  color: UIColor.purple))
+            tableView.reloadData()
+        case .changed, .ended:
+            let panGestureCurrentPoint = sender.location(in: drawingView)
+            let upLeftCorner = CGPoint(x: min(panGestureStartPoint.x,
+                                              panGestureCurrentPoint.x),
+                                       y: min(panGestureStartPoint.y,
+                                              panGestureCurrentPoint.y))
+            let downRightCorner = CGPoint(x: max(panGestureStartPoint.x,
+                                                 panGestureCurrentPoint.x),
+                                          y: max(panGestureStartPoint.y,
+                                                 panGestureCurrentPoint.y))
+            
+            drawingView.elements.last!.frame = CGRect(x: upLeftCorner.x,
+                                                      y: upLeftCorner.y,
+                                                      width: downRightCorner.x - upLeftCorner.x,
+                                                      height: downRightCorner.y - upLeftCorner.y)
+        default:
+            break
+        }
+        
+        drawingView.setNeedsDisplay()
     }
 }
 

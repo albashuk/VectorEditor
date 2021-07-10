@@ -11,13 +11,11 @@ class UICustomCellFigureView: UIView {
     var element = VectorFigure()
 
     override func draw(_ rect: CGRect) {
-        if (element.type != .Basic) {
-            let path = element.getPath()
-            let color = element.color
-            
-            color.setFill()
-            path.fill()
-        }
+        let path = element.getPath()
+        let color = element.color
+        
+        color.setFill()
+        path.fill()
     }
 }
 
